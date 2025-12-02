@@ -1,1 +1,51 @@
-<html><body><h2>Invoice (placeholder)</h2></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<h1>Invoice</h1>
+
+<label>Invoice Number: <input type="text" id="invNumber"></label><br>
+<label>Date: <input type="date" id="invDate"></label><br>
+<label>Customer: <input type="text" id="invCustomer"></label><br>
+
+<h2>Positionen</h2>
+
+<button onclick="addRow('invoiceTable','invoiceTotal')">Position hinzufügen</button>
+
+<table id="invoiceTable" data-total="invoiceTotal" border="1">
+<thead>
+<tr>
+  <th>Item</th>
+  <th>Description</th>
+  <th>Quantity</th>
+  <th>Unit</th>
+  <th>Unit Price</th>
+  <th>Total</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<h3>Summen</h3>
+Netto: <span id="invoiceTotal">0.00</span> €<br>
+
+MwSt:
+<select id="mwstSelect">
+    <option value="19">19%</option>
+    <option value="7">7%</option>
+    <option value="0">0%</option>
+</select><br>
+
+MwSt Betrag: <span id="invoiceMwstAmount">0.00</span> €<br>
+Brutto: <span id="invoiceBrutto">0.00</span> €<br>
+
+<button onclick="window.print()">Drucken</button>
+
+</body>
+</html>
