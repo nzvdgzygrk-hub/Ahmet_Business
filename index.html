@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+<meta charset='UTF-8'>
+<title>Ahmet Business – Apple Premium</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<div class='wrapper'>
+
+<h1>Ahmet Business Dokumenten-Manager</h1>
+
+<div class='tab-buttons'>
+  <button onclick="openTab('rechnung')">Rechnung</button>
+  <button onclick="openTab('angebot')">Angebot</button>
+  <button onclick="openTab('lieferschein')">Lieferschein</button>
+  <button onclick="openTab('archiv')">Archiv</button>
+</div>
+
+<!-- RECHNUNG -->
+<div id='rechnung' class='tab'>
+<h2>Rechnung</h2>
+<div class='logo' id='r_logo'></div>
+
+<label>Rechnungsnummer</label>
+<input id='r_nr'>
+
+<label>Kunde</label>
+<input id='r_kunde'>
+
+<table id='r_table'>
+<thead><tr>
+<th>Pos</th><th>Text</th><th>Menge</th><th>Einh</th><th>Preis</th><th>Gesamt</th><th>X</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+
+<button class='action' onclick="addRow('r')">+ Position</button>
+<button class='action' onclick="clearDoc('r')">Neu</button>
+<button class='action' onclick="saveDoc('r')">Speichern</button>
+</div>
+
+<!-- ANGEBOT -->
+<div id='angebot' class='tab'>
+<h2>Angebot</h2>
+<div class='logo' id='a_logo'></div>
+
+<label>Angebotsnummer</label>
+<input id='a_nr'>
+<label>Kunde</label>
+<input id='a_kunde'>
+
+<table id='a_table'>
+<thead><tr>
+<th>Pos</th><th>Text</th><th>Menge</th><th>Einh</th><th>Preis</th><th>Gesamt</th><th>X</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+
+<button class='action' onclick="addRow('a')">+ Position</button>
+<button class='action' onclick="clearDoc('a')">Neu</button>
+<button class='action' onclick="saveDoc('a')">Speichern</button>
+</div>
+
+<!-- LIEFERSCHEIN -->
+<div id='lieferschein' class='tab'>
+<h2>Lieferschein</h2>
+<div class='logo' id='l_logo'></div>
+
+<label>Lieferscheinnummer</label>
+<input id='l_nr'>
+<label>Kunde</label>
+<input id='l_kunde'>
+
+<table id='l_table'>
+<thead><tr>
+<th>Pos</th><th>Text</th><th>Menge</th><th>Einh</th><th>Bemerkung</th><th>X</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+
+<button class='action' onclick="addRow('l')">+ Position</button>
+<button class='action' onclick="clearDoc('l')">Neu</button>
+<button class='action' onclick="saveDoc('l')">Speichern</button>
+</div>
+
+<!-- ARCHIV -->
+<div id='archiv' class='tab'>
+<h2>Archiv</h2>
+<h3>Rechnungen</h3>
+<table id='archiv_r'></table>
+
+<h3>Angebote</h3>
+<table id='archiv_a'></table>
+
+<h3>Lieferscheine</h3>
+<table id='archiv_l'></table>
+</div>
+
+</div>
+
+<script src='script.js'></script>
+</body>
+</html>
