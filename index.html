@@ -5,135 +5,143 @@
 <title>Packing List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .page {
+    background: #ffffff;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .header textarea {
+    width: 260px;
+    height: 90px;
+    resize: vertical;
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .section {
+    margin-top: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: left;
+  }
+
+  th {
+    background: #e7e7e7;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    border: none;
+    background: #0078d7;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 6px;
+    margin-top: 8px;
+  }
+
+  .btn-secondary {
+    background: #666666;
+  }
+
+  .btn-danger {
+    background: #c62828;
+  }
+
+  .signature {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .signature-line {
+    width: 300px;
+    margin: 0 auto 6px auto;
+    border-bottom: 2px solid #000;
+    height: 40px;
+  }
+
+  @media print {
     body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
+      background: #ffffff;
+      padding: 0;
       margin: 0;
-      padding: 20px;
     }
-
+    #archive,
+    .no-print {
+      display: none !important;
+    }
     .page {
-      background: white;
-      max-width: 900px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0;
     }
-
-    h1 {
-      text-align: center;
-      margin-top: 0;
-      letter-spacing: 1px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .header textarea {
-      width: 250px;
-      height: 90px;
-      resize: vertical;
-      font-size: 14px;
-    }
-
-    .logo {
-      width: 160px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .section {
-      margin-top: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 6px;
-      font-size: 14px;
-      margin-top: 4px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 6px;
-      text-align: left;
-    }
-
-    th {
-      background: #e7e7e7;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    .btn {
-      padding: 10px 15px;
-      border: none;
-      background: #0078d7;
-      color: white;
-      font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 6px;
-      margin-top: 8px;
-    }
-
-    .btn-danger {
-      background: #c62828;
-    }
-
-    .btn-secondary {
-      background: #666;
-    }
-
-    .signature {
-      margin-top: 40px;
-      text-align: right;
-      font-size: 14px;
-    }
-
-    .signature-line {
-      width: 250px;
-      border-bottom: 1px solid black;
-      margin-left: auto;
-      margin-bottom: 5px;
-      height: 40px;
-    }
-
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-      }
-      .btn, #archive { display: none !important; }
-      .page {
-        box-shadow: none;
-        border-radius: 0;
-        margin: 0;
-      }
-    }
+  }
 </style>
 </head>
 <body>
 
 <div class="page">
 
-  <!-- HEADER -->
   <div class="header">
     <textarea id="company">Your Company Name
 Street & No
@@ -147,23 +155,20 @@ Email:</textarea>
 
   <h1>Packing List</h1>
 
-  <!-- CUSTOMER INFO -->
   <div class="section">Shipper</div>
   <textarea id="shipper"></textarea>
 
   <div class="section">Consignee</div>
   <textarea id="consignee"></textarea>
 
-  <!-- META -->
   <div class="section">Details</div>
   <input type="text" id="packingNo" placeholder="Packing List No.">
   <input type="date" id="packingDate">
   <input type="text" id="reference" placeholder="Reference No.">
   <input type="text" id="contact" placeholder="Contact Person">
 
-  <!-- ITEMS TABLE -->
   <div class="section">Items</div>
-  <button class="btn btn-secondary" onclick="addRow()">+ Add Item</button>
+  <button class="btn btn-secondary no-print" onclick="addRow()">+ Add Item</button>
 
   <table id="items">
     <thead>
@@ -174,32 +179,29 @@ Email:</textarea>
         <th>Unit</th>
         <th>Net Weight</th>
         <th>Gross Weight</th>
-        <th>Delete</th>
+        <th class="no-print">Delete</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
-  <!-- NOTES -->
   <div class="section">Notes</div>
   <textarea id="notes" style="height:80px;"></textarea>
 
-  <!-- BUTTONS -->
   <br>
-  <button class="btn" onclick="save()">Save to archive</button>
-  <button class="btn-secondary btn" onclick="newList()">New packing list</button>
-  <button class="btn" onclick="window.print()">Print / Save PDF</button>
 
-  <!-- SIGNATURE -->
+  <button class="btn no-print" onclick="save()">Save to archive</button>
+  <button class="btn-secondary btn no-print" onclick="newList()">New packing list</button>
+  <button class="btn no-print" onclick="window.print()">Print / Save PDF</button>
+
   <div class="signature">
     <div class="signature-line"></div>
-    Signature
+    <div>Signature</div>
   </div>
 
 </div>
 
-<!-- ARCHIVE -->
-<div id="archive" class="page" style="margin-top:20px;">
+<div id="archive" class="page no-print">
   <h2>Archive</h2>
   <table id="archiveTable">
     <thead>
@@ -230,7 +232,7 @@ function addRow(data = {}) {
     <td><input value="${data.unit || ""}"></td>
     <td><input value="${data.net || ""}"></td>
     <td><input value="${data.gross || ""}"></td>
-    <td><button class="btn-danger" onclick="this.parentNode.parentNode.remove(); renumber();">X</button></td>
+    <td class="no-print"><button class="btn-danger" onclick="this.parentNode.parentNode.remove(); renumber();">X</button></td>
   `;
 
   tbody.appendChild(tr);
@@ -253,14 +255,14 @@ function collect() {
 
   return {
     id: Date.now(),
-    company: company.value,
-    shipper: shipper.value,
-    consignee: consignee.value,
-    packingNo: packingNo.value,
-    packingDate: packingDate.value,
-    reference: reference.value,
-    contact: contact.value,
-    notes: notes.value,
+    company: document.getElementById("company").value,
+    shipper: document.getElementById("shipper").value,
+    consignee: document.getElementById("consignee").value,
+    packingNo: document.getElementById("packingNo").value,
+    packingDate: document.getElementById("packingDate").value,
+    reference: document.getElementById("reference").value,
+    contact: document.getElementById("contact").value,
+    notes: document.getElementById("notes").value,
     rows
   };
 }
@@ -283,31 +285,31 @@ function renderArchive() {
       <td>${entry.packingNo}</td>
       <td>${entry.packingDate}</td>
       <td>${entry.consignee.split("\n")[0] || ""}</td>
-      <td><button onclick='load(${entry.id})'>Load</button></td>
-      <td><button class="btn-danger" onclick='del(${entry.id})'>X</button></td>
+      <td><button onclick='loadEntry(${entry.id})'>Load</button></td>
+      <td><button class="btn-danger" onclick='deleteEntry(${entry.id})'>X</button></td>
     `;
     tbody.appendChild(tr);
   });
 }
 
-function load(id) {
+function loadEntry(id) {
   let data = archive.find(x => x.id === id);
   if (!data) return;
 
-  company.value = data.company;
-  shipper.value = data.shipper;
-  consignee.value = data.consignee;
-  packingNo.value = data.packingNo;
-  packingDate.value = data.packingDate;
-  reference.value = data.reference;
-  contact.value = data.contact;
-  notes.value = data.notes;
+  document.getElementById("company").value = data.company;
+  document.getElementById("shipper").value = data.shipper;
+  document.getElementById("consignee").value = data.consignee;
+  document.getElementById("packingNo").value = data.packingNo;
+  document.getElementById("packingDate").value = data.packingDate;
+  document.getElementById("reference").value = data.reference;
+  document.getElementById("contact").value = data.contact;
+  document.getElementById("notes").value = data.notes;
 
   document.querySelector("#items tbody").innerHTML = "";
   data.rows.forEach(r => addRow(r));
 }
 
-function del(id) {
+function deleteEntry(id) {
   archive = archive.filter(x => x.id !== id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(archive));
   renderArchive();
