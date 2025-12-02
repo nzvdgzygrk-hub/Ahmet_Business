@@ -1,14 +1,61 @@
-<!DOCTYPE html><html><body>
-<h2>Packing List</h2>
-<label>Currency: <input type='text' id='currency'></label>
-<h3>Technical Table</h3>
-<table border='1'>
-<tr><th>Pos</th><th>Description</th><th>Pieces</th><th>Weight</th><th>Length</th><th>HS Code</th></tr>
-<tr><td>1</td><td>Item</td><td>10</td><td>12kg</td><td>100cm</td><td>1234</td></tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Packing List</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<h1>Packing List</h1>
+
+<label>Packing List No: <input type="text" id="packNo"></label><br>
+<label>Date: <input type="date" id="packDate"></label><br>
+<label>Customer: <input type="text" id="packCustomer"></label><br>
+
+<h2>Technical Table</h2>
+
+<button onclick="addRow('techTable')">Position hinzufügen</button>
+
+<table id="techTable" border="1">
+<thead>
+<tr>
+  <th>Pos</th>
+  <th>Description of goods</th>
+  <th>Pieces</th>
+  <th>Weight</th>
+  <th>Length</th>
+  <th>HS Code</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
 </table>
-<h3>Price Table</h3>
-<table border='1'>
-<tr><th>Item</th><th>Description</th><th>Quantity</th><th>Unit Price</th><th>Total Price</th></tr>
-<tr><td>1</td><td>Item</td><td>10</td><td>5</td><td>50</td></tr>
+
+<h2>Price Table (Commercial)</h2>
+
+<label>Currency: <input id="currency" type="text" value="EUR"></label><br>
+
+<button onclick="addRow('priceTable','priceTotal')">Position hinzufügen</button>
+
+<table id="priceTable" data-total="priceTotal" border="1">
+<thead>
+<tr>
+  <th>Item</th>
+  <th>Description</th>
+  <th>Quantity</th>
+  <th>Unit</th>
+  <th>Unit Price</th>
+  <th>Total</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
 </table>
-</body></html>
+
+<h3>Total: <span id="priceTotal">0.00</span></h3>
+
+<button onclick="window.print()">Drucken</button>
+
+</body>
+</html>
